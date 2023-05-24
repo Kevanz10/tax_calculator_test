@@ -7,7 +7,7 @@ RSpec.describe ProductFactory do
   describe '.create_product' do
     let(:created_product) { described_class.create_product(input_product) }
 
-    context 'given a input string' do
+    context 'given an input string' do
       context 'regular product' do
         let(:input_product) { '2 book at 12.49' }
         let(:expected_product) do
