@@ -17,48 +17,38 @@ RSpec.describe OutputShoppingBasketGenerator do
     "\n3 imported boxes of chocolates: 35.45 \nSales Taxes: 7.8\nTotal: 98.28"
   end
 
-  subject { described_class.new(input).call }
+  subject { described_class.new(input_number).call }
 
   describe '#call' do
-    context 'when input 1' do
-      let(:input) do
-        <<~INPUT
-          2 book at 12.49
-          1 music CD at 14.99
-          1 chocolate bar at 0.85
-        INPUT
-      end
+    context 'when input number is 1' do
+      let(:input_number) { 1 }
 
       it 'generates an output shopping basket' do
         expect(subject).to eq(output1)
       end
     end
 
-    context 'when input 2' do
-      let(:input) do
-        <<~INPUT
-          1 imported box of chocolates at 10.00
-          1 imported bottle of perfume at 47.50
-        INPUT
-      end
+    context 'when input number is 2' do
+      let(:input_number) { 2 }
 
       it 'generates an output shopping basket' do
         expect(subject).to eq(output2)
       end
     end
 
-    context 'when input 3' do
-      let(:input) do
-        <<~INPUT
-          1 imported bottle of perfume at 27.99
-          1 bottle of perfume at 18.99
-          1 packet of headache pills at 9.75
-          3 imported boxes of chocolates at 11.25
-        INPUT
-      end
+    context 'when input number is' do
+      let(:input_number) { 3 }
 
       it 'generates an output shopping basket' do
         expect(subject).to eq(output3)
+      end
+    end
+
+    context 'when invalid input number' do
+      let(:input_number) { 4 }
+
+      it 'returns an InvalidInputNumberError' do
+        expect { subject }.to raise_error(Data::InvalidInputNumberError, 'Invalid input number: 4')
       end
     end
   end

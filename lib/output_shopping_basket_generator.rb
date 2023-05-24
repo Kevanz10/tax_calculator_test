@@ -3,12 +3,13 @@
 require_relative 'shopping_basket'
 require_relative 'product_factory'
 require_relative 'shopping_basket_decorator'
+require_relative 'utils/data'
 
 class OutputShoppingBasketGenerator
   attr_accessor :input, :shopping_basket
 
   def initialize(input)
-    @input = input
+    @input = Data.input(input)
     @shopping_basket = ShoppingBasket.new
   end
 
