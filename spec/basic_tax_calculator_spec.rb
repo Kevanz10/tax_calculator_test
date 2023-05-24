@@ -3,6 +3,7 @@
 require 'spec_helper'
 require_relative '../lib/tax/basic_tax_calculator'
 require_relative '../lib/product'
+require 'bigdecimal'
 
 RSpec.describe BasicTaxCalculator do
   describe '.calculate' do
@@ -12,16 +13,17 @@ RSpec.describe BasicTaxCalculator do
     context 'when product is exempted' do
       let(:name) { 'book' }
 
-      it 'multiplies the price by quantity plus the basic duty rate' do
+      it 'returns zero' do
         expect(subject).to eq(0)
       end
     end
 
     context 'when product is not exempted' do
       let(:name) { 'perfume' }
+      let(:basic_tax) { product.price * 0.1 * product.quantity }
 
-      it 'returns zero' do
-        expect(subject).to eq(product.price * 0.1 * product.quantity)
+      it 'multiplies the price by quantity plus the basic duty rate' do
+        expect(subject).to eq(BigDecimal(basic_tax.to_s))
       end
     end
   end
