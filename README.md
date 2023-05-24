@@ -52,21 +52,20 @@ Output 3:
 ***
 
 ### Run the project
+To test the project locally, follow these steps:
+- Make sure you have Ruby installed on your system
+- Navigate to the root path of the project in your terminal
+- Run the following command, replacing <input_number> with the desired input scenario number
+- The program will generate the output for the specified input scenario
 
-***
-If you want to test locally run the following command inside the root path, the number represents the input number scenario: 
 ```
-ruby tax_calculator_execution/executer.rb 1 
-
-ruby tax_calculator_execution/executer.rb 2
-
-ruby tax_calculator_execution/executer.rb 3
+ruby tax_calculator_execution/executer.rb <input_number>
 ```
 ***
 
 ### Run the specs
 
-Inside root path run:
+Navigate to the root path of the project in your terminal and run:
 ```
 rspec
 ```
