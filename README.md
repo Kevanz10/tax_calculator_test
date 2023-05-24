@@ -51,6 +51,39 @@ Output 3:
   
 ***
 
+### Run the project
+
+***
+If you want to test locally run the following command inside the root path, the number represents the input number scenario: 
+```
+ruby tax_calculator_execution/executer.rb 1 
+
+ruby tax_calculator_execution/executer.rb 2
+
+ruby tax_calculator_execution/executer.rb 3
+```
+***
+
 ### Run the specs
-`$ rspec
- 
+
+Inside root path run:
+```
+rspec
+```
+
+### Local Output
+Output 1:
+```
+"2 book: 24.98 \n1 music CD: 16.49 \n1 chocolate bar: 0.85 \nSales Taxes: 1.5\nTotal: 42.32"
+```
+
+Output 2:
+```
+"1 imported box of chocolates: 10.5 \n1 imported bottle of perfume: 54.65 \nSales Taxes: 7.65\nTotal: 65.15"
+```
+
+Output 3:
+```
+"1 imported bottle of perfume: 32.19 \n1 bottle of perfume: 20.89 \n1 packet of headache pills: 9.75 " \
+    "\n3 imported boxes of chocolates: 35.45 \nSales Taxes: 7.8\nTotal: 98.28"
+```
