@@ -3,7 +3,7 @@
 require_relative 'tax_calculator'
 require_relative 'product_factory'
 require_relative 'product_decorator'
-require 'byebug'
+
 class ShoppingBasket
   attr_reader :products
 
